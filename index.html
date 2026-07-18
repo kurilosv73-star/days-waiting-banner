@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Банер очікування</title>
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .banner {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+      border-top: 8px solid #0057b7;
+      border-bottom: 8px solid #ffd700;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .candle {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 72px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    .days {
+      font-size: 160px;
+      font-weight: bold;
+      color: #ffd700;
+      line-height: 1;
+      margin: 20px 0 10px;
+    }
+
+    .label {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 32px;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    .text {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .return {
+      font-size: 38px;
+      font-weight: bold;
+      color: #ffd700;
+      margin-top: 10px;
+    }
+
+    .hash {
+      font-size: 34px;
+      color: #4da3ff;
+      margin-top: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="candle">🕯️</div>
+    <h1>МИ ЧЕКАЄМО</h1>
+
+    <div class="days" id="days">0</div>
+    <div class="label">ДНІВ</div>
+
+    <div class="date">з дня зникнення безвісти · 18.01.2025</div>
+
+    <div class="text">Кожен день очікування — це день надії та віри.</div>
+    <div class="return">ПОВЕРНІТЬ НАШИХ ЗАХИСНИКІВ ДОДОМУ ЖИВИМИ.</div>
+
+    <div class="hash">#ПовернітьГероївДодому</div>
+  </div>
+
+  <script>
+    const missingDate = new Date("2025-01-18T00:00:00");
+    const today = new Date();
+    const diff = today - missingDate;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("days").textContent = days;
+  </script>
+</body>
+</html>
